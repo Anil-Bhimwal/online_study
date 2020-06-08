@@ -27,7 +27,7 @@ class Main extends Component {
           </div>
         </Navbar>
         <Menu courses={this.state.courses} onClick={(courseId) => this.onCourseSelect(courseId)} />
-        <CourseDetail course={this.state.courses.filter((course) => parseInt(course.id) === parseInt(this.state.selectedCourse))[0]} />
+        <CourseDetail course={this.state.courses.filter((course) => course.id === this.state.selectedCourse)[0]} />
       </div>
     );
   }
