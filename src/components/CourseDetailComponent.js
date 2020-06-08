@@ -6,6 +6,9 @@ import {
 import Image from 'react-bootstrap/Image';
 
 class CourseDetail extends Component {
+
+    
+    
     RenderComments(course) {
         if (course != null && course.comments != null) {
             const comments = course.comments.map((comm, i) => {
@@ -45,6 +48,7 @@ class CourseDetail extends Component {
 
     //Render Course
     RenderCourse(course) {
+        
         if (course != null) {
             return (
                 <div className="col-12 col-md-5 m-1">
@@ -65,14 +69,15 @@ class CourseDetail extends Component {
         }
     }
     render() {
-        const course = this.props.selectedCourse;
+        const course = this.props.course;
         return (
-
-            <div className="row">
-                {this.RenderCourse(course)}
-                {this.RenderComments(course)}
+            <div className="container">
+                <div className="row">
+                    
+                    {this.RenderCourse(course)}
+                    {this.RenderComments(course)}
+                </div>
             </div>
-
         );
     }
 
