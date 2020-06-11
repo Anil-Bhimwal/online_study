@@ -4,8 +4,7 @@ import Image from 'react-bootstrap/Image';
 
 function RenderMenuItem({ course, onClick }) {
     return (
-        <Card key={course.id}
-            onClick={() => onClick(course.id)}>
+        <Card key={course.id}>
             <Image src={course.image} alt={course.name} thumbnail />
             {/* <CardImg width="100%" src={course.image} alt={course.name} />
                 <CardImgOverlay>

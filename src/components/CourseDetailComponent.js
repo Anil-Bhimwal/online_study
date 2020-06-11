@@ -27,11 +27,14 @@ function RenderComments({ course }) {
         })
 
         return (
-            <div className="col-12 col-md-5 m-1 cardMaterial">
-                <h4> Comments</h4>
-                <ul className="list-unstyled ">
-                    {comments}
-                </ul>
+            <div className="col-12 col-md-5 m-1 ">
+                <Card>
+                    <h4> Comments</h4>
+                    <ul className="list-unstyled ">
+                        {comments}
+                    </ul>
+
+                </Card>
 
             </div>
         );
@@ -70,8 +73,8 @@ const CourseDetail = (props) => {
     return (
         <div className="container">
             <div className="row">
-                <RenderCourse course= {course}/>
-                <RenderComments course ={course}/>
+                <RenderCourse course={course} />
+                <RenderComments course={course} />
             </div>
         </div>
     );
