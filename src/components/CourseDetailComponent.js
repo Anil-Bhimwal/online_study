@@ -15,7 +15,7 @@ function RenderComments({ course }) {
             }).format(new Date(Date.parse(comm.date)));
             return (
 
-                <li key={comm.id} className="comment">
+                <li key={comm.id} className="comment" >
                     <p>
                         {comm.comment}
                     </p>
@@ -27,9 +27,9 @@ function RenderComments({ course }) {
         })
 
         return (
-            <div className="col-12 col-md-5 m-1">
+            <div className="col-12 col-md-5 m-1 cardMaterial">
                 <h4> Comments</h4>
-                <ul className="list-unstyled">
+                <ul className="list-unstyled ">
                     {comments}
                 </ul>
 

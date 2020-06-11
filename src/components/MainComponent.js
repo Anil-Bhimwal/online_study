@@ -3,31 +3,30 @@ import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './MenuComponent';
 import CourseDetail from './CourseDetailComponent';
 import { COURSES } from '../shared/courses';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 
 class Main extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-        courses: COURSES,
-        selectedCourse: null
+      courses: COURSES,
+      selectedCourse: null
     };
   }
 
   onCourseSelect(courseId) {
-    this.setState({ selectedCourse: courseId});
+    this.setState({ selectedCourse: courseId });
   }
 
   render() {
     return (
       <div>
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/"> Online Study </NavbarBrand>
-          </div>
-        </Navbar>
+        <Header />
         <Menu courses={this.state.courses} onClick={(courseId) => this.onCourseSelect(courseId)} />
         <CourseDetail course={this.state.courses.filter((course) => course.id === this.state.selectedCourse)[0]} />
+        <Footer />
       </div>
     );
   }
